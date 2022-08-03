@@ -1,4 +1,12 @@
 import streamlit as st
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
 from PyPDF2 import PdfReader
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
@@ -36,7 +44,7 @@ def predict(job, resume):
    #"TU CV calca con la publicación en un " + matchpercentage
    matchpercentage
 def main():
-    st.title('Hola Recruitk')
+    #st.title('Hola Recruitk')
     # model = load_model()
     categories = load_labels()
     image = load_image()
